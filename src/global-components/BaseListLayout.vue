@@ -8,7 +8,7 @@
       :style="{backgroundImage: 'url(' + $themeConfig.heroImage + ')'}"
     >
       <!-- backgroundImage: 'url(' + $withBase($themeConfig.heroImage) + ')' -->
-      <div class="p-3">
+      <div>
         <h1 class="display-3 d-none d-md-block">
           {{ $site.title }}
         </h1>
@@ -83,7 +83,7 @@ export default {
 <style lang="stylus">
 header.home-hero {
   max-height: 300px;
-  padding: 1.5rem 30% 1.5rem 1.5rem;
+  padding: 1.5rem 30% 1.5rem 2.5rem;
   background-color: $mainBackColor;
   background-repeat: no-repeat;
   background-position: right;
@@ -91,6 +91,7 @@ header.home-hero {
 
   @media only screen and (max-width: $MQMobile){
     max-height: 250px;
+    padding: 1.5rem 35% 1.5rem 1rem;
     h1 {
       font-size: 2rem;
     }
@@ -106,4 +107,5 @@ header.home-hero {
     padding-right: 5px;
   }
 }
+
 </style>

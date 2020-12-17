@@ -6,7 +6,7 @@
     <el-card
       class="mb-4 cursor-pointer post-card"
       shadow="hover"
-      :body-style="{ padding: '0rem' }"
+      :body-style="{ padding: '15px' }"
     >
       <div
         class="ui-post row px-3"

@@ -1,6 +1,6 @@
 module.exports = {
   title: 'Simple blog',
-  description: 'О web-разработке и анализе данных на Pyhton простыми словами',
+  description: 'О web-разработке и анализе данных простыми словами',
   theme: require.resolve('../../'),
   summaryLength: 700,
   themeConfig: {
