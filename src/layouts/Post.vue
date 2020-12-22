@@ -11,7 +11,7 @@
             v-if="$frontmatter.image"
             :src="$withBase($frontmatter.image)"
             :alt="$frontmatter.title"
-            class="w-100 p-5"
+            class="p-5 post-header-img"
           >
           <div class="p-3">
             <h1 align="center">
@@ -137,6 +137,14 @@ export default {
   position: relative;
   padding: 15px;
   max-width: 860px !important;
+
+  .post-header-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 300px;
+
+  }
 
   @media only screen and (max-width: $MQMobile) {
     padding-left: 5px !important;

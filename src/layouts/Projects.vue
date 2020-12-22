@@ -94,6 +94,7 @@ export default {
     color: lighten($accentColor, 80%);
     box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
     transition: all 0.4s;
+    height: 300px;
 
     a:hover {
       text-decoration: none;

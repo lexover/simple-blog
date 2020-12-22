@@ -19,7 +19,7 @@
           <img
             :src="$withBase(post.frontmatter.image)"
             :alt="post.title"
-            class="w-100 rounded p-2"
+            class="w-100 p-2 mx-auto"
           >
         </div>
         <div class="col-sm-12 col-md-6 col-lg-7 py-4">
@@ -86,7 +86,12 @@ export default {
 }
 </script>
 <style lang="stylus">
-
+.ui-post-image {
+  img {
+    object-fit: scale-down;
+    max-height: 300px;
+  }
+}
 .post-info {
   @media only screen and (max-width: $MQMobile) {
     padding-top: 0 !important;

@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Simple blog',
+  title: 'Lexover\'s blog',
   description: 'О web-разработке и анализе данных простыми словами',
   theme: require.resolve('../../'),
   summaryLength: 700,
@@ -39,7 +39,7 @@ module.exports = {
     disqus: 'disquswebsiteshortname',
     about: {
       fullName: 'Lexover',
-      bio: 'Full-stack разработчик Vue.js и Django',
+      bio: 'Full Stack разработчик. Vue.js & Django',
       image: './images/python.png',
     },
     footer: {
