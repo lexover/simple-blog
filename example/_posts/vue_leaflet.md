@@ -117,7 +117,7 @@ export default {
     initMap() {
       this.map = L.map('mapContainer').setView(this.centerCoordinates, 13);
       this.tileLayer = L.tileLayer(
-        "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibGV4b3ZlciIsImEiOiJja2l5aXU3dWgxZGVwMzBtZTl1dnVzN2h5In0.3UXgGUaoXN0pMj2iS6keFQ",
+        "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
         {
           attribution: 'Map data (c) <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
           maxZoom: 18,
@@ -179,7 +179,7 @@ export default {
     initMap() {
       this.map = L.map('mapContainer').setView(this.centerCoordinates, 13);
       this.tileLayer = L.tileLayer(
-        "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibGV4b3ZlciIsImEiOiJja2l5aXU3dWgxZGVwMzBtZTl1dnVzN2h5In0.3UXgGUaoXN0pMj2iS6keFQ",
+        "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
         {
           attribution: 'Map data (c) <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
           maxZoom: 18,

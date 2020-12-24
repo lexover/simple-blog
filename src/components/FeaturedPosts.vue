@@ -15,13 +15,7 @@
         :style="{
           'background-image': $withBase(post.frontmatter.image)
             ? `url(${$withBase(post.frontmatter.image)})`
-            : 'none',
-          'background-blend-mode': 'multiply',
-          'background-size': 'contain',
-          'background-color': 'rgba(238,240,236,0.7)',
-          'background-repeat': 'no-repeat',
-          'background-position': 'center',
-          'border-radius': '10px',
+            : 'none'
         }"
       >
         <div
@@ -55,3 +49,22 @@ export default {
   },
 }
 </script>
+
+<style lang='stylus' scoped>
+  .carousel-card {
+    background-blend-mode: multiply;
+    background-size: 200px auto;
+    background-color: rgba(238,240,236,0.7);
+    background-repeat: no-repeat;
+    background-position: center 20%;
+    border-radius: 10px;
+
+    @media only screen and (max-width: $MQMobile) {
+      background-size: 150px auto;
+      width: 200px;
+      .h4 {
+        font-size: 1.2rem;
+      }
+    }
+  }
+</style>

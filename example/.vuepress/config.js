@@ -1,6 +1,12 @@
 module.exports = {
   title: 'Lexover\'s blog',
   description: 'О web-разработке и анализе данных простыми словами',
+  head: [
+    ['link', { rel: 'icon', type: 'image/png', sizes: '64x64', href: '/public/favicons/favicon64.png' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/public/favicons/favicon32.png' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '24x24', href: '/public/favicons/favicon24.png' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/public/favicons/favicon16.png' }],
+  ],
   theme: require.resolve('../../'),
   summaryLength: 700,
   themeConfig: {
