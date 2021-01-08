@@ -19,6 +19,8 @@ module.exports = {
     ['meta', { name: 'msapplication-TileColor', content: '#ffffff' }],
     ['meta', { name: 'msapplication-TileImage', content: '/favicons/ms-icon-144x144.png' }],
     ['meta', { name: 'theme-color', content: '#ffffff' }],
+    ['meta', { name: 'yandex-verification', content: 'dfd19a3e759c8bcc' }],
+    ['meta', { name: 'google-site-verification', content: 'IJoWVAfgNc6L7WksyctEGSVkYkv7Ll1yK-6GT5CBhBU' }],
   ],
   theme: require.resolve('../../'),
   summaryLength: 700,
