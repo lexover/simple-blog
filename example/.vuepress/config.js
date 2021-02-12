@@ -98,7 +98,12 @@ module.exports = {
     '@vuepress/medium-zoom',
     '@vuepress/nprogress',
     'social-share',
-    '@vuepress/google-analytics',
+    [
+      '@vuepress/google-analytics',
+      {
+        ga: 'UA-189628758-1',
+      },
+    ],
     [
       '@vuepress/pwa',
       {
