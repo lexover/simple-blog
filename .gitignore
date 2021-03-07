@@ -3,3 +3,4 @@ node_modules
 dist
 desktop.ini
 yarn.lock
+package-lock.json
