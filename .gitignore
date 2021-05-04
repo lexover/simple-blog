@@ -4,3 +4,4 @@ dist
 desktop.ini
 yarn.lock
 package-lock.json
+.vscode/tasks.json
