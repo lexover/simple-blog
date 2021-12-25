@@ -56,6 +56,11 @@ module.exports = {
         link: '/projects/',
         icon: 'el-icon-folder',
       },
+      {
+        text: 'Cheat Sheets',
+        link: '/cheatsheets/',
+        icon: 'el-icon-folder',
+      }
     ],
     disqus: 'disquswebsiteshortname',
     about: {

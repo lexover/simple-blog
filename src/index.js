@@ -24,6 +24,18 @@ module.exports = (themeConfig, ctx) => {
         },
       },
       {
+        id: 'cheatsheet',
+        dirname: '_cheatsheets',
+        path: '/cheatsheets/',
+        layout: 'CheatSheetList',
+        itemLayout: 'CheatSheet',
+        frontmatter: { title: 'CheatSheet' },
+        itemPermalink: '/cheatshets/:slug',
+        pagination: {
+          lengthPerPage: 10,
+        },
+      },
+      {
         id: 'project',
         dirname: '_projects',
         path: '/projects/',
