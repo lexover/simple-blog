@@ -16,32 +16,11 @@
             <router-link :to="cheatSheet.regularPath">
               <div class="project-card-header">
                 <div class="project-icon">
-                  <i class="el-icon-folder" />
+                  <i class="el-icon-document" />
                 </div>
-                <div class="project-card--links">
-                  <el-link
-                    v-if="cheatSheet.frontmatter.github"
-                    :underline="false"
-                    class="p-2"
-                    :href="cheatSheet.frontmatter.github"
-                    target="_blank"
-                  >
-                    <GithubIcon />
-                  </el-link>
-
-                  <el-link
-                    v-if="cheatSheet.frontmatter.link"
-                    :underline="false"
-                    class="p-2"
-                    :href="cheatSheet.frontmatter.link"
-                    target="_blank"
-                  >
-                    <LinkIcon />
-                  </el-link>
-                </div>
+                <h4>{{ cheatSheet.frontmatter.title || cheatSheet.title }}</h4>
               </div>
               <div>
-                <h4>{{ cheatSheet.frontmatter.title || cheatSheet.title }}</h4>
                 <p class="project-description">
                   {{ cheatSheet.frontmatter.description }}
                 </p>
@@ -87,6 +66,7 @@ export default {
   margin-right: auto !important;
   margin-left: auto !important;
   min-height: 80vh;
+  width: 80%;
 
   .project-card.card {
     margin: .5rem;
@@ -94,7 +74,7 @@ export default {
     color: lighten($accentColor, 80%);
     box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
     transition: all 0.4s;
-    height: 300px;
+    height: 8em;
 
     a:hover {
       text-decoration: none;
@@ -109,27 +89,30 @@ export default {
       color: $accentColor;
 
       &:hover {
-        color: lighten($accentColor, 30%);
+        color: lighten($accentColor, 50%);
       }
     }
 
     .project-card-header {
       display: flex;
-      margin-bottom: 1rem;
-      justify-content: space-between;
+      margin-bottom: 0.5rem;
       align-items: center;
 
+      h4 {
+        margin: auto .2em;
+      }
+
       .project-icon {
-        font-size: 3em;
+        font-size: 2em;
         position: relative;
-        top: 0.3rem;
         color: lighten($accentColor, 50%);
+        margin-right: 0.2em;
       }
     }
 
     p.project-description {
       color: lighten($accentColor, 60%);
-      margin: 1.5rem auto;
+      margin: auto .2em;
     }
 
     .languages-list {

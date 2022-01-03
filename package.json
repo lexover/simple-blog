@@ -1,7 +1,7 @@
 {
   "name": "simple-blog",
   "version": "0.1",
-  "description": "About web development and data analysis with Python in simple words",
+  "description": "About web development with Python in simple words",
   "license": "MIT",
   "author": {
     "name": "Lexover",
@@ -55,6 +55,7 @@
   "dependencies": {
     "@vuepress/plugin-blog": "^1.9.2",
     "bootstrap": "^4.4.1",
+    "bootstrap-vue": "^2.21.2",
     "core-js": "2",
     "element-ui": "^2.13.0",
     "highlight.js": "^11.2.0",

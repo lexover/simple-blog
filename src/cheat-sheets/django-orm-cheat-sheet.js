@@ -38,9 +38,7 @@ export const CONTENT = [
                 "joe = Author.objects.create(name='Joe')\n" +
                 "john = Author.objects.create(name='John')\n" +
                 "entry.authors.add(joe, john)"
-            }, {
-
-            }
+            }, 
         ]
 
     }, {

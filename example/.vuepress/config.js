@@ -1,6 +1,6 @@
 module.exports = {
   title: 'Lexover\'s blog',
-  description: 'О web-разработке и анализе данных простыми словами',
+  description: 'О web-разработке простыми словами',
   head: [
     ['link', { rel: 'apple-touch-icon', sizes: '57x57', href: '/favicons/apple-icon-57x57.png' }],
     ['link', { rel: 'apple-touch-icon', sizes: '60x60', href: '/favicons/apple-icon-60x60.png' }],
@@ -52,15 +52,15 @@ module.exports = {
         icon: 'el-icon-house',
       },
       {
+        text: 'Cheat Sheets',
+        link: '/cheatsheets/',
+        icon: 'el-icon-collection',
+      },
+      {
         text: 'Проекты',
         link: '/projects/',
         icon: 'el-icon-folder',
       },
-      {
-        text: 'Cheat Sheets',
-        link: '/cheatsheets/',
-        icon: 'el-icon-folder',
-      }
     ],
     disqus: 'disquswebsiteshortname',
     about: {

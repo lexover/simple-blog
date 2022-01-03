@@ -3,16 +3,16 @@ date: '2021-09-18'
 slug: django-orm-cheat-sheet 
 tags:
 - Django
-title: Django ORM cheat sheet 
-description: Краткие подсказки по Django 
+title: Django ORM
+description: Взаимодействие с моделями Django
 author: Lexover
 location: Russia 
 image: https://res.cloudinary.com/dm3m076ji/image/upload/v1613595228/media/lexover_blog/docker-django_k0wuo4.png
 meta:
   - name: title
-    content: Django ORM cheat sheet
+    content: Django ORM
   - name: description
-    content: Краткие подсказки по Django ORM
+    content: Взаимодействие с моделями Django
   - name: keywords
     content: Django
   - name: author
@@ -22,7 +22,7 @@ meta:
 featured: true
 ---
 
-Зачастую бэкенд разработчик хорошо занают и понимают `SQL`. Работая при этом с несколькими `ORM` мы периодически путаемся и пытаемся вспомнить каже реализовать ту или иную конструкцию `SQL` в фреймворке с которым работаем в текущий момент. По этой причине возникла идея создать небольшой cheat-sheet который покажет пример реализации `SQL` кода в `Django ORM`.
+Ниже приведены подсказки по работе с моделями в Django ORM и аналог запроса тех же данных с помощью чистого SQL (диалект Postgre SQL).
 
 >В текущей реализации привязки даны для Django версии 1.8 если мне известно, что в более новой версии Django это не работает или может быть упрощено, об этом будет указано в сноске `*`.
 

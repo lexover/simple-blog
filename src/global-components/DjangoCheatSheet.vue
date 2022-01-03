@@ -1,5 +1,6 @@
 <template>
     <div>
+      <b-form-select v-model="selected" :options="sections"/>
       <table class="table-sticky-header">
         <colgroup>
           <col style="width: 30%">
@@ -12,14 +13,17 @@
           </th>
         </thead>
         <tbody>
-            <template v-for="(item, index) in content">
+            <template v-for="(item, index) in filtered">
                 <tr :key="`item-${index}`">
                     <td colspan="3" class="subtitle">{{ item.title }}</td>
                 </tr>
                 <template v-for="(row, i) in item.rows">
-                  <tr :key="`row-${i}`">
+                  <tr :key="`row-${index}-${i}`">
                     <td class="description">
                       {{ row.description }}
+                      <span v-if="row.info">
+                        <i class="info el-icon-info" v-b-tooltip.hover :title="row.info"/>
+                      </span>
                     </td>
                     <td>
                       <pre v-highlightjs class='table-code'><code class="sql">{{ row.sql }}</code></pre>
@@ -44,12 +48,31 @@ export default {
     return {
       columns: ['Описание', 'SQL', 'Django'],
       content: CONTENT,
+      selected: null,
     }
-  }
+  },
+  computed: {
+    sections() {
+      let i = 0
+      const sections = this.content.map((x) => { return {value: i++, text: x.title}; })
+      return [{value: null, text: 'Все'}, ...sections]
+    },
+    filtered() {
+      if (this.selected === null) {
+        return this.content
+      } else {
+        return [this.content[parseInt(this.selected)]]
+      }
+    }
+  },
 }
 </script>
 
 <style scoped>
+    >>>.custom-select:focus {
+      border-color: #877865;
+      box-shadow: 0 0 0 .2rem rgba(135,120,101,.25);
+    }
     pre.table-code {
         padding: 0;
         margin: 0;
@@ -80,5 +103,8 @@ export default {
         font-size: .8em;
         font-weight: 600;
         word-wrap: normal;
+    }
+    .info {
+      cursor: pointer;
     }
 </style>
