@@ -26,10 +26,10 @@
                       </span>
                     </td>
                     <td>
-                      <pre v-highlightjs class='table-code'><code class="sql">{{ row.sql }}</code></pre>
+                      <pre v-highlightjs="row.sql" class='table-code'><code class="sql"></code></pre>
                     </td>
                     <td>
-                      <pre v-highlightjs class='table-code'><code class="python">{{ row.django }}</code></pre>
+                      <pre v-highlightjs="row.django" class='table-code'><code class="python"></code></pre>
                     </td>
                   </tr>
                 </template>
@@ -58,11 +58,14 @@ export default {
       return [{value: null, text: 'Все'}, ...sections]
     },
     filtered() {
+      let result
       if (this.selected === null) {
-        return this.content
+        result = this.content
       } else {
-        return [this.content[parseInt(this.selected)]]
+        result = [this.content[parseInt(this.selected)]]
       }
+      console.log(result)
+      return result
     }
   },
 }

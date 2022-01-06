@@ -26,7 +26,7 @@ featured: true
 
 >В текущей реализации привязки даны для Django версии 1.8 если мне известно, что в более новой версии Django это не работает или может быть упрощено, об этом будет указано в сноске `*`.
 
-Для начала определим модель с которой будем работать и чтобы не "выдумывать велосипед" возьмем описание из документации [Django](https://docs.djangoproject.com/en/3.2/topics/db/models/) 
+Модель данных, позаимстовована из официальной документации [Django](https://docs.djangoproject.com/en/3.2/topics/db/models/) и выглядит следующим образом:
 
 <img src="https://res.cloudinary.com/dm3m076ji/image/upload/v1640455735/media/lexover_blog/Django_model_opvisv.png" alt="model" style="display: block; margin: auto;" />
 
