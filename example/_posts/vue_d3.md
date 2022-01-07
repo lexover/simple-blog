@@ -3,7 +3,6 @@ date: '2021-01-06'
 slug: vue-d3 
 tags:
 - vue.js 
-- d3 
 title: Построение графиков в Vue.js с использованием D3.js. 
 description: Построение графиков в Vue.js с использованием D3.js.
 author: Lexover 

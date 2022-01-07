@@ -8,7 +8,7 @@
           <col style="width: 35%">
         </colgroup>
         <thead>
-          <th v-for="col in columns" :key="col.id" class="sticky-header"> 
+          <th v-for="col in columns" :key="col.id"> 
               {{ col }}
           </th>
         </thead>
@@ -58,14 +58,11 @@ export default {
       return [{value: null, text: 'Все'}, ...sections]
     },
     filtered() {
-      let result
       if (this.selected === null) {
-        result = this.content
+        return this.content
       } else {
-        result = [this.content[parseInt(this.selected)]]
+        return [this.content[parseInt(this.selected)]]
       }
-      console.log(result)
-      return result
     }
   },
 }

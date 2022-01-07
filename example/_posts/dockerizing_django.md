@@ -3,11 +3,8 @@ date: '2021-02-17'
 slug: dockerizing-django-with-postres-guniconr-nginx
 tags:
 - Docker
-- Docker-compose
 - Django
-- PostgreSQL
-- Gunicorn
-- Nginx
+- Python
 title: Докеризация Django c PostrgeSQL, Gunicorn и Nginx.
 description: Пошаговая инструкция по настройке запуска Django в связке PostrgeSQL, Gunicorn, Nginx на Docker.
 author: Michael Herman (translated by Lexover)

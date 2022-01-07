@@ -2,9 +2,8 @@
 date: '2021-03-06'
 slug: rpc-rabbitmq 
 tags:
-- RPC 
+- Python
 - RabbitMQ
-- Pika 
 title: Технология RPC и ее реализацию с помощью Rabbit MQ и Pika. 
 description: Рассмотрим назначение технологии Удаленный Вызов Процедур (RPC) и как она реализуется с помощью Rabbit MQ и Pika.
 author: Lexover 

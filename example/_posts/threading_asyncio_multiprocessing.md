@@ -2,13 +2,8 @@
 date: '2021-02-11'
 slug: speeding-up-python-with-concurrency-parallelism-and-asyncio
 tags:
-- concurrency 
-- parallelism 
-- multiprocessing
-- python 
-- threading
-- asyncio 
-- httpio
+- multithreading
+- Python 
 title: Разгоняем Python с помощью конкурентности параллелизма и asyncio.
 description: Увеличиваем скорость работы программ Python с помощью threading, multiporcessing и asyncio.
 author: Jace Madlin [translated by Lexover] 

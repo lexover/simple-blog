@@ -3,7 +3,8 @@ date: '2021-03-07'
 slug: test-django-with-pytest
 tags:
 - Django 
-- pytest
+- Python
+- test
 title: Тестируем Django с pytest.
 description: Рассмотрим как выполнять тестирование Django приложения с pytest и дополнительные инструменты упрощающие данную задачу.
 author: Lexover 

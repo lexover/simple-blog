@@ -84,7 +84,6 @@ export default {
     margin-left: auto;
     margin-right: auto;
     max-height: 300px;
-
   }
 
   @media only screen and (max-width: $MQMobile) {

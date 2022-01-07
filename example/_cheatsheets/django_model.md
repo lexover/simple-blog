@@ -7,10 +7,10 @@ title: Django ORM
 description: Взаимодействие с моделями Django
 author: Lexover
 location: Russia 
-image: https://res.cloudinary.com/dm3m076ji/image/upload/v1613595228/media/lexover_blog/docker-django_k0wuo4.png
+image: https://res.cloudinary.com/dm3m076ji/image/upload/v1641557363/media/lexover_blog/django_orm_xi5i7c.png 
 meta:
   - name: title
-    content: Django ORM
+    content: Шпаргалка Django ORM
   - name: description
     content: Взаимодействие с моделями Django
   - name: keywords
@@ -28,6 +28,8 @@ featured: true
 
 Модель данных, позаимстовована из официальной документации [Django](https://docs.djangoproject.com/en/3.2/topics/db/models/) и выглядит следующим образом:
 
-<img src="https://res.cloudinary.com/dm3m076ji/image/upload/v1640455735/media/lexover_blog/Django_model_opvisv.png" alt="model" style="display: block; margin: auto;" />
-
+<img src="https://res.cloudinary.com/dm3m076ji/image/upload/v1641557403/media/lexover_blog/Django_model_ws4qqq.png" 
+     alt="model" 
+     style="display: block; margin: auto;" 
+/>
 <DjangoCheatSheet/>

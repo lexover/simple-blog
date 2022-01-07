@@ -2,11 +2,7 @@
 date: '2021-02-04'
 slug: how-to-run-periodic-tasks-in-celery 
 tags:
-- celery 
-- crontab
 - task
-- redis
-- RabitMQ 
 title: Как запускать периодические задачи в Celery
 description: Как запускать периодические задачи в Celery 
 author: Antonio Di Mariano [translated by Lexover] 

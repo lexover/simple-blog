@@ -2,8 +2,7 @@
 date: '2020-12-13'
 slug: rest-what-is-this 
 tags:
-- REST 
-- WEB 
+- REST
 title: Для чего нужен REST API? 
 description: Что такое REST и для чего он нужен?
 author: Lexover 

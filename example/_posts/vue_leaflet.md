@@ -3,8 +3,6 @@ date: '2020-12-21'
 slug: vue-leaflet 
 tags:
 - vue.js 
-- leaflet 
-- openmaps 
 title: Интерактивная карта в Vue.js. 
 description: Создание интерактивной карты в Vue.js c Leaflet.
 author: Lexover 

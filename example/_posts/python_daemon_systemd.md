@@ -2,8 +2,7 @@
 date: '2021-06-27'
 slug: python-daemon-with-systemd 
 tags:
-- Python
-- Systemd
+- Python 
 title: Создание демона Python с использованием Systemd 
 description: Пошаговая инструкция по созданию демона Python в linux окружении с Systemd
 author: Lexover

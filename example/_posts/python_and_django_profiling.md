@@ -2,8 +2,7 @@
 date: '2021-05-03'
 slug: python_profiling
 tags:
-- python 
-- profiling
+- Python 
 title: Профилирование приложений Python
 description: Разбираемся с инструментами профилирования приложенй на Python. 
 author: Lexover 
