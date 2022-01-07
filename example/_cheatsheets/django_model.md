@@ -7,7 +7,7 @@ title: Django ORM
 description: Взаимодействие с моделями Django
 author: Lexover
 location: Russia 
-image: https://res.cloudinary.com/dm3m076ji/image/upload/v1641557363/media/lexover_blog/django_orm_xi5i7c.png 
+image: https://res.cloudinary.com/dm3m076ji/image/upload/v1641567241/media/lexover_blog/django_dpz7ai.png 
 meta:
   - name: title
     content: Шпаргалка Django ORM

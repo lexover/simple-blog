@@ -1,11 +1,10 @@
 <template>
     <div>
       <b-form-select v-model="selected" :options="sections"/>
-      <table class="table-sticky-header">
+      <table>
         <colgroup>
-          <col style="width: 30%">
-          <col style="width: 35%">
-          <col style="width: 35%">
+          <col style="width: 50%">
+          <col style="width: 50%">
         </colgroup>
         <thead>
           <th v-for="col in columns" :key="col"> 
@@ -15,7 +14,7 @@
         <tbody>
             <template v-for="(item, index) in filtered">
                 <tr :key="`item-${index}`">
-                    <td colspan="3" class="subtitle">{{ item.title }}</td>
+                    <td colspan="2" class="subtitle">{{ item.title }}</td>
                 </tr>
                 <template v-for="(row, i) in item.rows">
                   <tr :key="`row-${index}-${i}`">
@@ -26,10 +25,7 @@
                       </span>
                     </td>
                     <td>
-                      <pre v-highlightjs="row.sql" class='table-code'><code class="sql"></code></pre>
-                    </td>
-                    <td>
-                      <pre v-highlightjs="row.django" class='table-code'><code class="python"></code></pre>
+                      <pre v-highlightjs="row.command" class='table-code'><code class="shell"></code></pre>
                     </td>
                   </tr>
                 </template>
@@ -40,13 +36,13 @@
 </template>
 
 <script>
-import { CONTENT } from '../cheat-sheets/django-orm-cheat-sheet'
+import { CONTENT } from '../cheat-sheets/django-manage-cheat-sheet'
 
 export default {
-  name: "table",
+  name: "DjangoManageCheatSheet",
   data () {
     return {
-      columns: ['Описание', 'SQL', 'Django'],
+      columns: ['Описание', 'Команда'],
       content: CONTENT,
       selected: null,
     }

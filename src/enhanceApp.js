@@ -8,6 +8,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'highlight.js/styles/default.css'
 import sql from 'highlight.js/lib/languages/sql'
 import python from 'highlight.js/lib/languages/python'
+import shell from 'highlight.js/lib/languages/shell'
 
 export default ({
   Vue, // the version of Vue being used in the VuePress app
@@ -22,6 +23,7 @@ export default ({
     languages: {
       sql,
       python,
+      shell,
     }
   })
 }
