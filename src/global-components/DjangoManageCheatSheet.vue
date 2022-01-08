@@ -21,7 +21,7 @@
                     <td class="description">
                       {{ row.description }}
                       <span v-if="row.info">
-                        <i class="info el-icon-info" v-b-tooltip.hover :title="row.info"/>
+                        <i class="info el-icon-info" v-b-tooltip.hover.topright.html :title="row.info"/>
                       </span>
                     </td>
                     <td>
@@ -68,6 +68,13 @@ export default {
     >>>.custom-select:focus {
       border-color: #877865;
       box-shadow: 0 0 0 .2rem rgba(135,120,101,.25);
+    }
+    >>>.arrow::before {
+      border-top-color: #877865;
+    }
+    >>>.tooltip-inner {
+      max-width: 350px;
+      background-color: #877865;
     }
     pre.table-code {
         padding: 0;
