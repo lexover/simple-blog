@@ -61,12 +61,12 @@ export const CONTENT = [
             },{  
                 description: "Получить записи таблицы Entry исключая записи с датой публикции больше 05.11.2020 и записи с заголовком Hello",
                 sql: "SELECT * FROM entry \nWHERE NOT pub_date > 2020-11-05\n\tAND NOT hedline = ‘Hello’",
-                django: "Entry.objects.exclude(\n\tpub_date__gt=datetime.data(2020, 11, 05)\n\t).exclude(headline='Hello')"
+                django: "Entry.objects.exclude(\n\tpub_date__gt=datetime.data(2020, 11, 05)\n).exclude(headline='Hello')"
             },{  
                 description: "Получить записи таблицы Entry упорядоченные по дате публицкации в нисходящем порядке (от большей даты к меньшей)" + 
                 "и по заголовку в прямом (возрастающем) порядке, для значений с 2005 годом публикации",
                 sql: "SELECT * FROM entry \nORDER BY pub_date DESC, headdline ASC",
-                django: "Entry.objects.filter(pub_date__year=2005).order_by('-pub_date', 'headline')" 
+                django: "Entry.objects.filter(\n\tpub_date__year=2005\n).order_by('-pub_date', 'headline')" 
             },{  
                 description: "Отсортировать значения в слючайном порядке (запрос может быть медленным и сильно нагружать БД)",
                 sql: "SELECT * FROM entry \nWHERE random() < 0.01",
@@ -83,11 +83,11 @@ export const CONTENT = [
                 "Например, SELECT DISTINCT ON (a) возвращает вам первую запись для каждого уникального значения колонки a. Если вы не определите " + 
                 "сортировку, будут возвращены случайные записи для каждого уникального значения.",
                 sql: "SELECT * FROM entry DISTINCT ON author, pub_date",
-                django: "Entry.objects.order_by('author', 'pub_date').distinct('author', 'pub_date')"
+                django: "Entry.objects.order_by(\n\t'author', 'pub_date'\n).distinct('author', 'pub_date')"
             }, {
                 description: "Получить количество записей в БД отвечающему запросу",
                 sql: "SELECT COUNT(*) FROM entry\nWHERE headline WHERE headline LIKE '%Lennon%'",
-                django: "Entry.objects.filter(headline__contains='Lennon).count()"
+                django: "Entry.objects.filter(\n\theadline__contains='Lennon\n).count()"
             }
         ]
     }, {
@@ -116,7 +116,7 @@ export const CONTENT = [
                 description: "Получить количество статей в таблицы Entry упорядоченные по дате публицкации в нисходящем порядке (от большей даты к меньшей)" + 
                 "и по заголовку в прямом (возрастающем) порядке, для значений с 2005 годом публикации",
                 sql: "SELECT * FROM entry \nORDER BY \n\tpub_date DESC, \n\theaddline ASC",
-                django: "Entry.objects.filter(pub_date__year=2005).order_by('-pub_date', 'headline')" 
+                django: "Entry.objects.filter(\n\tpub_date__year=2005\n).order_by('-pub_date', 'headline')" 
             },{  
                 description: "Получить количество статей по рейтингу и дату последней публикции",
                 sql: "SELECT \n\trating, \n\tCOUNT(id) AS total, \n\tMAX(pub_date) AS last \nFROM entry \nGROUP BY rating",
@@ -125,7 +125,7 @@ export const CONTENT = [
             },{  
                 description: "Получить количество статей сгруппированных по рейтингу и количеству комментариев",
                 sql: "SELECT \n\trating, \n\tnumber_of_comments, \n\tCOUNT(id) AS total \nFROM entry \nGROUP BY rating, number_of_comments",
-                django: "Entry.objects.values('rating', 'number_of_comments')\n\t.annotate(total=Count('id'))"
+                django: "Entry.objects.values(\n\t'rating', 'number_of_comments'\n).annotate(total=Count('id'))"
             },{  
                 description: "Получить количество публикций по годам",
                 info: "Для получения года от даты использован lookup <field>__year, результатом кот. является dict с именем ключа pub_date__year",
@@ -135,7 +135,7 @@ export const CONTENT = [
                 description: "Количество статей изменененных с момента публикции", 
                 info: "Сначала используется annotate для построения выражения и помечается как ключ GROUP BY, ссылаясь на выражение через mod_since_pub в следующем вызове values().",
                 sql: "SELECT \n\tmod_date > pub_date AS mod_since_pub,\n\tCOUNT (id) AS total\nFROM Entry\nGROUP BY mod_date > pub_date",
-                django: "from django.db.models import ExpressionWrapper, Q, F, BooleanField\nEntry.objects.annotate(\n\tmod_since_pub=ExpressionWrapper(\n\t\t" + 
+                django: "from django.db.models import (\n\tExpressionWrapper, Q, F, BooleanField)\nEntry.objects.annotate(\n\tmod_since_pub=ExpressionWrapper(\n\t\t" + 
                 "Q(mod_date__gt=F('pub_date')),\n\t\toutput_field=BooleanField()))\n.values('mod_since_pub')\n.annotate(total=Count('id')\n.values('mod_since_pub', 'total')"
             }, {
                 description: "Посчитать количество статей с рейтингом ниже 3-х и более 3-х опубликованных в 2020 г.",
@@ -165,12 +165,12 @@ export const CONTENT = [
             }, {
                 description: "Посчитать количество статей в каждом из блогов",
                 sql: "SELECT\n\tb.name,\n\tCOUNT(e.id) AS total\nFROM Entry a\nJOIN Blog b ON b.id = e.blog_id\nGROUP BY b.name",
-                django: "Entry.objects.values('blog__name')\n.annotate(total=Count('id'))"
+                django: "Entry.objects.values(\n\t'blog__name'\n).annotate(total=Count('id'))"
             }, {
                 description: "Посчитать для каждого пользователя в скольких статьях он является автором/соавтором",
                 sql: "SELECT\n\ta.id,\n\tCOUNT (e.author_id) AS authors\nFROM\n\tAuthor a\n\tLEFT OUTER JOIN Entry e ON (\n\t\t" +
                 "a.id = e.author_id\n\t)\nGROUP BY a.id",
-                django: "Author.objects.annotate(authors=Count('entries'))\n.values('id', 'authors')"
+                django: "Author.objects.annotate(\n\tauthors=Count('entries')\n).values('id', 'authors')"
             }
         ]
     }, {
@@ -208,19 +208,19 @@ export const CONTENT = [
                 "(если сомневаетесь, протестируйте его!). Некоторые типы баз данных, особенно MySQL, не очень хорошо оптимизируют " + 
                 "вложенные запросы. В таком случае более эффективно получить список значений первым запросом и передать в другой",
                 sql: "SELECT ... \nWHERE blog.id IN (\n\tSELECT id FROM ... \n\tWHERE NAME LIKE '%Cheddar%')",
-                django: "inner_qs = Blog.objects.filter(name__contains='Cheddar')\nentries = Entry.objects.filter(blog__in=inner_qs)"
+                django: "inner_qs = Blog.objects.filter(\n\tname__contains='Cheddar')\nentries = Entry.objects.filter(blog__in=inner_qs)"
             }, {
                 description: "Проверка на вхождение в список значений из другого QuerySet (оптимизированный запрос через список значений)",
                 info: "Если запрос через другой QuerySet не эффективен поробуйте реализовать данный.",
                 sql: "SELECT ... \nWHERE blog.id IN (\n\tSELECT id FROM ... \n\tWHERE NAME LIKE '%Cheddar%')",
-                django: "values = Blog.objects.filter(\n\tname__contains='Cheddar').values_list('pk', flat=True)\n" +
+                django: "values = Blog.objects.filter(\n\tname__contains='Cheddar'\n).values_list('pk', flat=True)\n" +
                 "entries = Entry.objects.filter(blog__in=list(values))"
             }, {
                 description: "Проверка на вхождение в список значений через values",
                 info: "Передавая в QuerySet, который является результат вызова values() или values_list(), как аргумент для фильтра __in, " +
                 "вы должны быть уверенным, что результат содержит данные только одного поля",
                 sql: "SELECT ... \nWHERE blog.id IN (\n\tSELECT id FROM ... \n\tWHERE NAME LIKE '%Cheddar%')",
-                django: "inner_qs = Blog.objects.filter(name__contains='Ch').values('name')\nentries = Entry.objects.filter(blog__name__in=inner_qs)" 
+                django: "inner_qs = Blog.objects.filter(\n\tname__contains='Cheddar'\n).values('name')\nentries = Entry.objects.filter(\n\tblog__name__in=inner_qs)" 
             }, {
                 description: "Значения NULL",
                 sql: "SELECT ... WHERE pub_date IS NULL;",
@@ -264,12 +264,12 @@ export const CONTENT = [
                 info: "Вы можете использовать range там же, где можно использовать BETWEEN в SQL — для дат, чисел и даже строк.",
                 sql: "SELECT ... \nWHERE pub_date \n\tBETWEEN '2005-01-01' and '2005-03-31';",
                 django: "import datetime\nstart_date = datetime.date(2005, 1, 1)\nend_date = datetime.date(2005, 3, 31)\n" +
-                "Entry.objects.filter(pub_date__range=(start_date, end_date))"
+                "Entry.objects.filter(\n\tpub_date__range=(start_date, end_date))"
             }, {
                 description: "Преобразовать в дату поле даты и времени",
                 info: "При USE_TZ равном True, значение поля будет преобразовано в текущий часовой пояс.",
                 sql: "",
-                django: "Entry.objects.filter(pub_date__date=datetime.date(2005, 1, 1))\nEntry.objects.filter(pub_date__date__gt=datetime.date(2005, 1, 1))"
+                django: "Entry.objects.filter(\n\tpub_date__date=datetime.date(2005, 1, 1))\nEntry.objects.filter(\n\tpub_date__date__gt=datetime.date(2005, 1, 1))"
             }, {
                 description: "Проверка года для полей date/datetime",
                 info: "При USE_TZ равном True, значение поля будет преобразовано в текущий часовой пояс.",
