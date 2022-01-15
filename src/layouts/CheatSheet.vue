@@ -2,7 +2,7 @@
   <div id="vuperess-theme-blog__post-layout">
     <Toc />
     <transition name="el-fade-in-linear">
-      <main class="vuepress-blog-theme-content" style="max-width: 1200px;">
+      <main class="vuepress-blog-theme-content">
         <el-card class="py-3 px-3 mb-4">
           <img
             v-if="$frontmatter.image"
@@ -77,6 +77,7 @@ export default {
   color: #2c3e50;
   position: relative;
   padding: 15px;
+  max-width: 1200px!important;
 
   .post-header-img {
     display: block;

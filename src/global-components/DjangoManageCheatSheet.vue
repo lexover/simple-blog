@@ -64,18 +64,21 @@ export default {
 }
 </script>
 
-<style scoped>
-    >>>.custom-select:focus {
+<style>
+    .custom-select:focus {
       border-color: #877865;
       box-shadow: 0 0 0 .2rem rgba(135,120,101,.25);
     }
-    >>>.arrow::before {
+    .arrow::before {
       border-top-color: #877865;
     }
-    >>>.tooltip-inner {
+    .tooltip-inner {
       max-width: 350px;
       background-color: #877865;
     }
+</style>
+
+<style scoped>
     pre.table-code {
         padding: 0;
         margin: 0;
