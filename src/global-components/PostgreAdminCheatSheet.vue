@@ -25,7 +25,7 @@
                       </span>
                     </td>
                     <td>
-                      <pre v-highlightjs="row.command" class='table-code'><code class="shell"></code></pre>
+                      <pre v-highlightjs="row.command" class='table-code'><code :class="[row.code]"></code></pre>
                     </td>
                   </tr>
                 </template>
@@ -75,6 +75,7 @@ export default {
     .tooltip-inner {
       max-width: 350px;
       background-color: #877865;
+      text-align: left;
     }
 </style>
 
